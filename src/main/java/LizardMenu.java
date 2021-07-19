@@ -73,7 +73,7 @@ class LizardMenu {
     }
 
     private void printMenu() {
-        System.out.println("HMAC: " + lizardAI.getHMAC());
+        System.out.println("\nHMAC: " + lizardAI.getHMAC());
         IntStream.rangeClosed(1, lizardGame.getLength())
                 .forEach(a -> System.out.printf("%d - %s\n", a, lizardGame.getClass(a)));
         System.out.println("0 - exit");
