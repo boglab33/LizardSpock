@@ -32,7 +32,7 @@ class LizardGame {
     }
 
     /*Receive value starting from 1, like printed in main menu*/
-    public String getClass(int index) {
+    public String getGameClass(int index) {
         return gameClasses[index - 1];
     }
 

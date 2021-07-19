@@ -28,7 +28,7 @@ class LizardAI {
 
         random.nextBytes(privateKey);
         move = random.nextInt(lizardGame.getLength()) + 1;
-        String computerChoice = lizardGame.getClass(move);
+        String computerChoice = lizardGame.getGameClass(move);
         HmacUtils hmac = new HmacUtils(HmacAlgorithms.HMAC_SHA_384, privateKey);
         return hmac.hmacHex(computerChoice);
     }

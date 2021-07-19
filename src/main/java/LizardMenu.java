@@ -44,8 +44,8 @@ class LizardMenu {
     }
 
     private void showMoves(int userInput) {
-        System.out.println("Your move: " + lizardGame.getClass(userInput));
-        System.out.println("Computer move: " + lizardGame.getClass(lizardAI.getMove()));
+        System.out.println("Your move: " + lizardGame.getGameClass(userInput));
+        System.out.println("Computer move: " + lizardGame.getGameClass(lizardAI.getMove()));
     }
 
     private int validUserInput() {
@@ -63,7 +63,7 @@ class LizardMenu {
     private int getUserInput() {
         String input = scanner.nextLine();
         if (!input.matches("\\d+")) {
-            throw new IllegalArgumentException("Please enter a number!");
+            throw new IllegalArgumentException("Please enter a valid number!");
         }
         int inputAsInt = Integer.parseInt(input);
         if (inputAsInt < 0 || inputAsInt > lizardGame.getLength()) {
@@ -75,7 +75,7 @@ class LizardMenu {
     private void printMenu() {
         System.out.println("\nHMAC: " + lizardAI.getHMAC());
         IntStream.rangeClosed(1, lizardGame.getLength())
-                .forEach(a -> System.out.printf("%d - %s\n", a, lizardGame.getClass(a)));
+                .forEach(a -> System.out.printf("%d - %s\n", a, lizardGame.getGameClass(a)));
         System.out.println("0 - exit");
     }
 }
